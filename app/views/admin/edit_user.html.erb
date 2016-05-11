@@ -1,0 +1,43 @@
+<%= form_for @user, :url =>{:action => "update", :id =>@user} do |f| %>
+
+    <% if @user.errors.any? %>
+        <div class="error">
+          <h2><%= @user.errors.count %> errors prohibited this User from being saved:</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="divs">
+      <label> Editing user information </label> <hr/>
+      <%= f.label "First_Name" %><br/>
+      <%= f.text_field :fName , :allow_blank => false%> <br/>
+
+      <%= f.label "Last_Name" %><br/>
+      <%= f.text_field :lName , :allow_blank => false%><br/>
+
+      <%= f.label "Address" %><br/>
+      <%= f.text_field :address , :allow_blank => false%><br/>
+
+      <%= f.label "City" %><br/>
+      <%= f.text_field :city , :allow_blank => false%><br/>
+
+      <%= f.label "Province" %><br/>
+      <%= select(:user, :province, [['ON', 'ON'],['QC', 'QC'], ['AB','AB'], ['NB','NB'], ['NS','NS'], ['NT','NT'],
+                                     ['MB','MB'], ['BC','BC'], ['PE','PE'], ['SK','SK'] ,['NL','NL'] ,['NU','NU'],
+                                     ['YT','YT']]) %> <br>
+
+      <%= f.label "Postal Code" %><br/>
+      <%= f.text_field :pCode , :allow_blank => false%><br/>
+
+      <%= f.label "Telphone" %><br/>
+      <%= f.telephone_field :telephone, :max_length => 10, :min_length => 10%><br/> <hr>
+
+      <div class="actions">
+        <%= f.submit "Update" %>
+      </div>
+    </div>
+<% end %>

@@ -1,0 +1,34 @@
+
+
+<%= form_for @vehicle, :url =>{:action => "create", :id =>@vehicle} do |f| %>
+
+    <% if @vehicle.errors.any? %>
+        <div class="error">
+          <h2><%= @vehicle.errors.count %> errors prohibited this Vehicle from being saved:</h2>
+          <ul>
+            <% @vehicle.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="divs">
+      <label class="div_header">New vehicle</label> <hr>
+    <div>
+      <%= f.label "license:"%> <br> <%= f.text_field 'license' %></p>
+      <%= f.label "colour:"%> <br> <%= f.text_field 'colour' %></p>
+      <%= f.label "make:"%>  <br> <%= f.text_field 'make' %> </p>
+      <%= f.label "model:"%> <br> <%= f.text_field 'model' %></p>
+      <%= f.label "Year:" %> <br> <%= f.text_field 'year' %>
+    </div>
+      <hr>
+
+      <div class="actions">
+    <%= f.submit "Save changes" %>
+
+<% end %>
+
+<%= button_to 'Back', {:action => 'view'} ,:method => :get %>
+</div>
+</div>

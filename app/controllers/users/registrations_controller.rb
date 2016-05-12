@@ -7,14 +7,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #  super
   # end
 
+  # overriding to allow for the addition and manipulation of fields to the devise module
   def sign_up_params
-    params.require(:user).permit(:fName,:lName,:email,:password,:address ,:password_confirmation, :pCode, :city, :role, :telephone, :province, :email, :password, :password_confirmation)
+    params.require(:user).permit(:fName,:lName,:email,:password,:address ,:password_confirmation, :pCode, :city, :role,
+                                 :telephone, :province, :email, :password, :password_confirmation)
   end
 
   def account_update_params
-    params.require(:user).permit(:fName,:lName,:email,:password,:address ,:password_confirmation, :pCode, :city, :role, :telephone, :province, :password, :password_confirmation, :current_password)
+    params.require(:user).permit(:fName,:lName,:email,:password,:address ,:password_confirmation, :pCode, :city, :role,
+                                 :telephone, :province, :password, :password_confirmation, :current_password)
   end
 
+  # delete vehicles associated with the deleted user
   def destroy
     @vehicles = Vehicle.where(user_id: current_user.id)
     @vehicles.each do |v|

@@ -9,26 +9,25 @@
 </head>
 <body>
 
-<div id="upper_toolbar">
-<% if !user_signed_in? %>
+<div>
+  <% if !user_signed_in? %>
       <div class="signing">
-    <%= link_to "sign in", new_user_session_path %>
+        <%= link_to "sign in", new_user_session_path %>
       </div>
       <div class="signing">
-      <%= link_to "sign up", new_user_registration_path %>
+        <%= link_to "sign up", new_user_registration_path %>
       </div>
-<% else %>
+  <% else %>
       <div class="signing">
-    <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+        <%= link_to "sign out", destroy_user_session_path, method: :delete %>
       </div>
-<% end %>
+  <% end %>
 </div>
 
 <div id="alerts_messages">
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 </div>
-
 
 <%= yield %>
 

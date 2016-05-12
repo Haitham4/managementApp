@@ -23,82 +23,17 @@ a:link, a:active, a:visited {
     color: #CD0000;
 }
 
-input {
-    margin-bottom: 5px;
-}
-
-p {
-    line-height: 150%;
-}
-
-div#login {
-    margin: 0 auto;
-}
-
-div#header {
-    text-align: center;
-    padding-bottom: 15px;
-}
-
-div#content {
-    float: left;
-    width: 450px;
-    padding: 10px;
-}
-
-div#content h3 {
-    margin-top: 15px;
-}
-
-ul#books {
-    list-style-type: none;
-}
-
-ul#books li {
-    line-height: 140%;
-}
-
-div#sidebar {
-    width: 200px;
-    margin-left: 480px;
-}
-
-ul#subjects {
-    width: 700px;
-    text-align: center;
-    padding: 5px;
-    background-color: #ececec;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-}
-
-ul#subjects li {
-    display: inline;
-    padding-left: 5px;
-}
-
 h1 {
     text-align: center;
-    font-family: fantasy;
-}
-
-#login {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: #c9ccc4;
-    border-radius: 25px;
-    padding: 20px;
-    font-size:1.5em;
-    font-family: Monaco, "Andale Mono";
+    font-family: Helvetica, Geneva, Arial, sans-serif;
 }
 
 .divs {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+
     background-color: #c9ccc4;
     border-radius: 25px;
     padding: 20px;
@@ -107,15 +42,6 @@ h1 {
     border: solid;
     border-color: black;
 }
-
- /*#upper_toolbar {
-    display: inline;
-    font-size: medium;
-    border: solid;
-    border-color: gray;
-    border-radius: 25px;
-    padding: 5px;
-} */
 
 .signing {
     display: inline;
@@ -133,11 +59,6 @@ h1 {
     font-size: large;
     font-weight: bold;
     color: darkred;
-}
-
-h1 {
-    text-align: center;
-    font-family: Helvetica, Geneva, Arial, sans-serif;
 }
 
 .actions {

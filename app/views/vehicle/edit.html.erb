@@ -1,23 +1,17 @@
-
-
 <%= form_for @vehicle, :url =>{:action => "update", :id =>@vehicle} do |f| %>
 
+    <div class="divs">
 
-    <% if @vehicle.errors.any? %>
-        <div class="error">
+      <% if @vehicle.errors.any? %>
           <h2><%= @vehicle.errors.count %> errors prohibited this Vehicle from being saved:</h2>
           <ul>
             <% @vehicle.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
             <% end %>
           </ul>
-        </div>
-    <% end %>
+      <% end %> <hr>
 
-
-
-    <div class="divs">
-      <label> Editing vehicle's information </label> <hr/>
+      <label class="div_header"> Editing vehicle's information </label> <hr/>
 
       <%= f.label "license:"%> <br> <%= f.text_field 'license' %> <br>
       <%= f.label "colour:"%> <br> <%= f.text_field 'colour' %> <br>

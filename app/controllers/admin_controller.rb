@@ -17,6 +17,7 @@ class AdminController < ApplicationController
     end
   end
 
+  # helper function for fetching User data from "edit_user" form
   def user_param
     params.require(:user).permit(:fName,:lName,:email,:password,:address ,:password_confirmation, :pCode, :city, :role, :telephone, :province)
   end

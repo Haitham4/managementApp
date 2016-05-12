@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :pCode, format: {with: /\A[a-zA-Z][0-9][a-zA-Z]\s[0-9][a-zA-Z][0-9]+\z/, message: "Postal Code Not in correct format"},
+  validates :pCode, format: {with: /\A[a-zA-Z][0-9][a-zA-Z]\s[0-9][a-zA-Z][0-9]+\z/, message: "[Postal Code] is not in the correct format"},
             :length => {is: 7}
 
   validates :telephone, numericality: {:only_integer => true},

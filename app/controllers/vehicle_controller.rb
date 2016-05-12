@@ -2,7 +2,6 @@ class VehicleController < ApplicationController
 
   def view
     if current_user.role == 'admin'
-      puts "-------> Am I admin ? #{params[:id]}"
       @user_id = params[:id]
     else
       @user_id = current_user.id
@@ -17,14 +16,13 @@ class VehicleController < ApplicationController
     @vehicle = Vehicle.new(vehicle_params.merge!(user_id: current_user.id))
 
     if @vehicle.save
-      puts "It worked"
       redirect_to :action => 'view'
     else
-      puts "It didn't work"
       render :action => 'new'
     end
   end
 
+  # helper function for fetching Vehicle data from "new" form
   def vehicle_params
     params.require(:vehicle).permit(:license, :colour, :make, :model, :year, :user_id)
   end
@@ -43,6 +41,7 @@ class VehicleController < ApplicationController
     end
   end
 
+  # helper function for fetching Vehicle data from "edit" form
   def vehicle_param
     params.require(:vehicle).permit(:license, :colour, :make, :model, :year)
   end

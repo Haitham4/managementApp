@@ -13,7 +13,7 @@
             <li> <%= c.make %> <%= link_to "Edit", :action => "edit", :id => c.id %>
               <%= link_to "Delete", :action => "delete", :id => c.id, :user_id => @user_id %>
               <%= "[#{c.paid}]" %>
-              <% if c.paid == "Not Paid" %>
+              <% if c.paid != "Paid" %>
                   <%= button_to 'Pay', {:action => 'pay', :id => c.id, :user_id => c.user_id},
                                 form: {style: 'display: inline;'}%>
               <% end %>

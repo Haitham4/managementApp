@@ -1,7 +1,5 @@
 class VehicleController < ApplicationController
 
-  before_action :authenticate_user!
-
   def view
     if current_user.role == 'admin'
       @user_id = params[:id]

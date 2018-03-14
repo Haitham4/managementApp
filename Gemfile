@@ -1,6 +1,7 @@
+ruby '2.3.0'
 source 'https://rubygems.org'
 
-gem 'devise'
+gem 'devise', '>= 3.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use mysql as the database for Active Record
@@ -25,8 +26,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails_12factor', group: :production
 
-ruby '2.3.0'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -39,6 +38,16 @@ ruby '2.3.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
+  gem 'faker'
+
+end
+
+group :test do
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :development do

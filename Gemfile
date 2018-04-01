@@ -42,12 +42,14 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'
   gem 'faker'
-
+  gem 'minitest-rails'
+  gem 'minitest-rails-capybara'
 end
 
 group :test do
   gem 'capybara'
   gem 'launchy'
+
 end
 
 group :development do

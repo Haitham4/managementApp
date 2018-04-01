@@ -71,8 +71,6 @@ RSpec.feature "UserSides", type: :feature do
 
     click_button 'Save changes'
 
-    save_and_open_page
-
     expect(page).to have_no_content('Create new vehicle')
 
   end

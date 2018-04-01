@@ -28,9 +28,8 @@ RSpec.describe VehicleController, type: :controller do
 
 
   it 'Test delete route' do
-    sign_in(@user)
 
-    puts "-------> #{@vehicle.id}"
+    sign_in(@user)
     delete :delete, id: @vehicle.id, user_id: @user.id
     expect(response).to redirect_to(vehicle_view_path(id: @user.id))
   end

@@ -4,7 +4,6 @@ RSpec.feature "AdminSides", type: :feature do
 
   before do |example|
     @user = User.find_by_email('admin@mail.com')
-    puts "-------> email: #{@user.email}"
 
     unless example.metadata[:skip_before]
       visit root_url
@@ -55,8 +54,6 @@ RSpec.feature "AdminSides", type: :feature do
 
     click_button 'Sign up'
 
-    save_and_open_page
-
     expect(page).to have_content(/A message with a confirmation link has been sent to your email address. Please follow the link to activate your account/i)
 
   end
@@ -75,7 +72,6 @@ RSpec.feature "AdminSides", type: :feature do
   scenario "Admin Logs in, checks first user, deletes user, all revelvent data should no longer exisit" do
 
     click_link 'Delete'
-    save_and_open_page
 
     expect(page).to have_content(/No users to display/i)
   end
